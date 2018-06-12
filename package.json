@@ -1,0 +1,28 @@
+{
+  "name": "social-media-assets",
+  "version": "1.0.0",
+  "description": "Social media assets for your project",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/web-on/social-media-assets.git"
+  },
+  "keywords": [
+    "social",
+    "media",
+    "brand",
+    "colors"
+  ],
+  "author": "Oleg K (web-on)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/web-on/social-media-assets/issues"
+  },
+  "homepage": "https://github.com/web-on/social-media-assets#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0"
+  }
+}
