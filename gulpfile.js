@@ -10,21 +10,25 @@ var PATHS = {
 	dist: 'dist'
 };
 
-function clean(done) {
+function clean_all(done) {
   rimraf(PATHS.dist, done);
 }
 
+function clean_css(done) {
+  rimraf(PATHS.styles.dest, done);
+}
+
 function styles() {
-	return gulp.src(PATHS.styles.src)
+  return gulp.src(PATHS.styles.src)
 		.pipe(sass())
 		.pipe(gulp.dest(PATHS.styles.dest));
 }
 
 exports.styles = styles;
 
-var build = gulp.series(clean, styles);
+var css = gulp.series(clean_css, styles);
+
+gulp.task('css', css);
 
 
-gulp.task('build', build);
-
-gulp.task('default', build);
+gulp.task('default', css);

@@ -1,0 +1,47 @@
+/// Mixin to populate brand color CSS.
+/// @param {String} $name
+/// @param {String} $color-param
+/// @param {String} $selector-stem
+@mixin use-brand-color($name, $color-param: 'color', $selector-stem: $brand-color-selector-stem) {
+  $color:             map-get($social-media-brand-colors, #{$name});
+	$aliases :          map-get($aliases, #{$name});
+
+  @if $color {
+   	.#{$name}#{$selector-stem}#{$color-param} {
+      #{$color-param} : $color;
+    }
+
+    @if $aliases {
+      @each $prefix in $aliases {
+        @if $prefix != $name {
+          .#{$prefix}#{$selector-stem}#{$color-param} {
+            #{$color-param} : $color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin brand-text-color($brand) {
+  @include use-brand-color($brand);
+}
+
+@mixin brand-background-color($brand) {
+  @include use-brand-color($brand, background-color);
+}
+
+@mixin brand-all-colors($brand) {
+  @include brand-text-color($brand);
+  @include brand-background-color($brand);
+}
+
+
+
+/// Include all brand colors.
+@mixin all-social-brand-colors {
+  @each $brand, $color in $social-media-brand-colors {
+    @include brand-text-color($brand);
+    @include brand-background-color($brand);
+  }
+}

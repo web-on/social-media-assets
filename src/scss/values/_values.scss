@@ -1,6 +1,0 @@
-/// Set the brand color selector stem that will form the CSS selector second part, where the first part is the brand name or alias.
-/// @type: String
-$brand-color-selector-stem : '-brand-';
-
-@import 'aliases';
-@import 'colors';

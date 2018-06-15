@@ -1,9 +1,23 @@
 @charset 'utf-8';
 
+/// Set the brand color selector stem 
+/// that will form the CSS selector second part, 
+/// where the first part is the brand name or alias.
+/// @type: String
+$brand-color-selector-stem : '-brand-';
 
-@import 'values/values';
 
+@import 'values/aliases';
+@import 'values/colors';
+
+@import 'mixins/colors';
+
+
+/// To generate styles for specific brands only,
+/// comment out @include all-social-brand-colors
+/// uncomment @import 'explicit_brands'
+/// And leave uncommented only the needed brands in
+/// _explicit_brands.scss file.
 
 @include all-social-brand-colors;
-
-//@include brand-all-colors('facebook')
+// @import 'explicit_brands';
