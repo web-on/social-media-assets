@@ -16,7 +16,7 @@ npm install
 
 3. Build the css result file with gulp:
 ```
-gulp build
+gulp css
 ```
 
 The above assumes you have nodejs, npm, gulp and gulp-cli installed globally in your system. The example of how to do it can be as follows:
